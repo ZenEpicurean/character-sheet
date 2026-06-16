@@ -6,11 +6,12 @@ export class CharacterSheet {
     #intelligence
     #wisdom;
     #charisma;
-    currency: {
-        gold: number;
-        silver: number;
-        copper: number;
-    }
+    #currency = {
+        gold: 0,
+        silver: 0,
+        copper: 0
+    };
+    #skills = {};
 
     constructor(strength = null, dexterity = null, constitution = null, intelligence = null, wisdom = null, charisma = null) {
         this.#strength = strength;
@@ -21,6 +22,7 @@ export class CharacterSheet {
         this.#charisma = charisma;
     }
 
+    // Getters and setters
     get strength() {
         return this.#strength;
     }
@@ -68,6 +70,33 @@ export class CharacterSheet {
     set charisma(value) {
         this.#charisma = value;
     }
+
+    get currencyGold() {
+        return this.#currency.gold;
+    }
+
+    set currencyGold(value) {
+        this.#currency.gold = value;
+    }
+
+    get currencySilver() {
+        return this.#currency.silver;
+    }
+
+    set currencySilver(value) {
+        this.#currency.silver = value;
+    }
+
+    get currencyCopper() {
+        return this.#currency.copper;
+    }
+
+    set currencyCopper(value) {
+        this.#currency.copper = value;
+    }
+
+
+
 
     // Personality traits:
     // Make personality actually affect ability rolls in interactions with NPCs.
