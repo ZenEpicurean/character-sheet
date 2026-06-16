@@ -1,3 +1,5 @@
+import {CoinPouch} from "./CoinPouch.js";
+
 export class CharacterSheet {
 
     #strength;
@@ -6,20 +8,29 @@ export class CharacterSheet {
     #intelligence
     #wisdom;
     #charisma;
-    #currency = {
-        gold: 0,
-        silver: 0,
-        copper: 0
-    };
-    #skills = {};
+    #currency;
+    #skills;
+    #name;
+    #alignment;
+    #race;
 
-    constructor(strength = null, dexterity = null, constitution = null, intelligence = null, wisdom = null, charisma = null) {
+    constructor(name, strength = null, dexterity = null, constitution = null, intelligence = null, wisdom = null, charisma = null) {
+        this.#name = name;
         this.#strength = strength;
         this.#dexterity = dexterity;
         this.#constitution = constitution;
         this.#intelligence = intelligence;
         this.#wisdom = wisdom;
         this.#charisma = charisma;
+        this.#currency = new CoinPouch();
+        this.#skills = {};
+    }
+
+    load(sheetID = 0) {
+        if (!sheetID) throw new Error(
+            "CharacterSheet.loadByID: No sheet ID provided."
+        )
+        // Load character sheet from database
     }
 
     // Getters and setters
@@ -94,6 +105,36 @@ export class CharacterSheet {
     set currencyCopper(value) {
         this.#currency.copper = value;
     }
+
+    getCurrencies() {
+        return this.#currency;
+    }
+
+    get name() {
+        return this.#name;
+    }
+
+    set name(value) {
+        this.#name = value;
+    }
+
+    get alignment() {
+        return this.#alignment;
+    }
+
+    set alignment(value) {
+        this.#alignment = value;
+    }
+
+    get race() {
+        return this.#race;
+    }
+
+    set race(value) {
+        this.#race = value;
+    }
+
+
 
 
 
