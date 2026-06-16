@@ -1,0 +1,20 @@
+{
+  "name": "character-sheet",
+  "version": "1.0.0",
+  "description": "Character sheet model for a tabletop RPG game.",
+  "homepage": "https://github.com/ZenEpicurean/character-sheet#readme",
+  "bugs": {
+    "url": "https://github.com/ZenEpicurean/character-sheet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZenEpicurean/character-sheet.git"
+  },
+  "license": "ISC",
+  "author": "David Hamm",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
