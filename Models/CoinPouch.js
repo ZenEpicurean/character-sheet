@@ -63,6 +63,14 @@ export class CoinPouch {
     }
 
     minimizeDenominations() {
-        // Change currency to most efficient form of gold, silver and copper
+        // Convert copper to silver (100 copper = 1 silver)
+        const silverFromCopper = Math.floor(this.#copper / 100);
+        this.#silver += silverFromCopper;
+        this.#copper %= 100;
+
+        // Convert silver to gold (100 silver = 1 gold)
+        const goldFromSilver = Math.floor(this.#silver / 100);
+        this.#gold += goldFromSilver;
+        this.#silver %= 100;
     }
 }
