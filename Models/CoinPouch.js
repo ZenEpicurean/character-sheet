@@ -18,12 +18,24 @@ export class CoinPouch {
         this.#gold += amount;
     }
 
+    subtractGold(amount) {
+        this.#gold -= amount;
+    }
+
     addSilver(amount) {
         this.#silver += amount;
     }
 
+    subtractSilver(amount) {
+        this.#silver -= amount;
+    }
+
     addCopper(amount) {
         this.#copper += amount;
+    }
+
+    subtractCopper(amount) {
+        this.#copper -= amount;
     }
 
     getGold() {
