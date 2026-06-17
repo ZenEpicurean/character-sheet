@@ -2,9 +2,11 @@ export class Skill {
 
     #name;
     #level;
+    _maxLevel = 50;
 
     constructor(profile, level = 0) {
-
+        this.setProfile(profile);
+        this.setLevel(level);
     }
 
     get name() {
@@ -23,14 +25,15 @@ export class Skill {
     }
 
     setProfile(profile) {
-        this.#skillProfile = profile;
+        this.#name = profile.name;
+        this._maxLevel = profile.maxLevel;
     }
 
 
 
     setLevel(level) {
         if (level < 0) throw new Error("Skill level cannot be negative.");
-        if (level > 20) throw new Error("Skill level cannot exceed 20.");
+        if (level > this._maxLevel) throw new Error(`Skill level cannot exceed ${this._maxLevel}.`);
         this.#level = level;
     }
 }
